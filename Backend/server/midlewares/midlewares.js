@@ -3,20 +3,20 @@ require('../config/config');
 
 const verificaToken = function (req, res, next) {
 
-    // let token = req.get('Authorization');
-    // jwt.verify(token, process.env.SEED, (err, decoded) => {
-    //     if (err) {
-    //         return res.status(401).json({
-    //             ok: false,
-    //             message: 'Token incorrecto'
-    //         });
-    //     }
+     let token = req.get('Authorization');
+     jwt.verify(token, process.env.SEED, (err, decoded) => {
+         if (err) {
+             return res.status(401).json({
+                 ok: false,
+                 message: 'Token incorrecto'
+             });
+         }
 
-    //     //req.usuario = decoded.usuario;
+         //req.usuario = decoded.usuario;
 
-    //     next();
+         next();
 
-    // });
+     });
 
 };
 

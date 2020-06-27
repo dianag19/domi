@@ -29,7 +29,7 @@ app.get('/upcoming', (request, response) => {
 
                 response.status(201).json({
                     ok: true,
-                    message: results,
+                    message: results.rows,
                     
                 });
             })
